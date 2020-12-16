@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-attachment: fixed;
+  background-color: #162d50ff;
+  background-image: url(../public/assets/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: "Josefin Sans";
+  font-size: 22px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#content-wrapper {
+  text-align: center;
+  color: white;
+  padding-bottom: 20vh;
+}
+
+.deel {
+  position: relative;
+  width: 100%;
+}
+
+/* gradient */
+.deel .met-gradient::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 60%;
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.8) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.8) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.deel-inhoud {
+  width: 60%;
+  margin: auto;
+}
+
+.deel-inhoud img {
+  margin-top: 8em;
+  max-width: 250px;
+  max-height: 250px;
+  width: 30%;
+  border-radius: 100%;
+
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.8);
+}
+
+.deel-inhoud p,
+.deel-inhoud h1 {
+  margin-bottom: 1em;
+}
+
+a {
+  color: white;
+}
+
+.liefdesbrief {
+  padding-top: 30vh;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .deel-inhoud {
+    width: 90%;
+  }
+
+  .deel-inhoud img {
+    margin-top: 3em;
+    width: 70%;
+  }
+
+  .slogan {
+    margin-top: 0.5em;
+    font-size: 35px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: 0.5em 0 !important;
+  }
+}
+
+.slogan {
+  margin-top: 2em;
+}
+
+.contact {
+  margin-top: 3em;
+}
+
+.visie {
+  padding-top: 30vh;
+}
+
+.vanwege {
+  margin-top: 3em;
+  font-size: 0.7em;
+}
+
+/* scroll text */
+.scroll-knop {
+  margin-top: 8em;
+  padding-top: 60px;
+  color: white;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  font: normal 400 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+/* scroll cirkel */
+.scroll-knop .met-cirkel {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+  border: 1px solid white;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+
+/* scroll pijl */
+.scroll-knop .naar-beneden::after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+.scroll-knop .naar-boven::after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin: -6px 0 0 -8px;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  box-sizing: border-box;
+}
+
+/* scroll animatie */
+.scroll-knop .met-animatie::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  opacity: 0;
+  -webkit-animation: sdb03 3s infinite;
+  animation: sdb03 3s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.button-group .button {
+  padding: 1em;
+  margin: 0 0.5em;
+  border: white 1px solid;
+
+  text-decoration-line: none;
+  font-size: 0.8em;
+}
